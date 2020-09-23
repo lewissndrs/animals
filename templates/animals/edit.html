@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="/animals/{{ id }}" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" value="{{ animal.name }}">
+        <label for="species">Species</label>
+        <input type="text" name="species" value="{{ animal.species }}">
+        <label for="owner">Owner</label>
+        <select name="owner" id="owner">
+        {% for owner in all_owners %}
+            <option value="{{ owner.id }}">{{ owner.name }}</option>
+        {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+
+{% endblock %}
