@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% for animal in all_animals %}
+
+<p>Animal name: {{animal.name}} Species: {{animal.species}} Owner name: {{animal.owner.name}}</p>
+<form action="/animals/{{ animal.id }}/delete" method="POST">
+    <button>Delete</button>
+</form>
+
+<form action="/animals/{{ animal.id }}/show">
+    <button>Show more</button>
+</form>
+
+{% endfor %}
+
+
+{% endblock %}

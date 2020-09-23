@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/animals/new" method="POST">
+    <label for="name">Animal Name</label>
+    <input type="text" name="name">
+    <label for="species">species</label>
+    <input type="text" name="species">
+    <select name="owner_id" id="owner">
+        {% for owner in all_owners %}
+            <option value="{{owner.id}}">{{owner.name}}</option>
+        {% endfor %}
+    </select>
+    <button type='submit'>ADD ANIMAL</button>
+</form>
+
+{% endblock %}
