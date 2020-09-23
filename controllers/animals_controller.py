@@ -50,3 +50,4 @@ def update_animal(id):
     owner = owner_repository.select(owner_id)
     animal = Animal(name,species,owner,id)
     animal_repository.update(animal)
+    return redirect('/animals')

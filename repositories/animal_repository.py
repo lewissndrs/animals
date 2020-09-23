@@ -41,7 +41,7 @@ def select(id):
         animal = Animal(result['name'],result['species'],owner, result['id'])
     return animal
 
-    def update(animal):
-        sql = 'UPDATE animals SET (name, species, owner_id) = (%s,%s,%s) WHERE id = %s'
-        values = [animal.name, animal.species, animal.owner_id, animal.id]
-        run_sql(sql,values)
+def update(animal):
+    sql = 'UPDATE animals SET (name, species, owner_id) = (%s,%s,%s) WHERE id = %s'
+    values = [animal.name, animal.species, animal.owner_id, animal.id]
+    run_sql(sql,values)
