@@ -2,13 +2,13 @@
 
 {% block content %}
 
-    <form action="/animals/{{ id }}" method="POST">
+    <form action="/animals/{{ animal.id }}" method="POST">
         <label for="name">Name</label>
         <input type="text" name="name" value="{{ animal.name }}">
         <label for="species">Species</label>
         <input type="text" name="species" value="{{ animal.species }}">
-        <label for="owner">Owner</label>
-        <select name="owner" id="owner">
+        <label for="owner_id">Owner</label>
+        <select name="owner_id" id="owner_id">
         {% for owner in all_owners %}
             <option value="{{ owner.id }}">{{ owner.name }}</option>
         {% endfor %}
